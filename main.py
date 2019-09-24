@@ -23,9 +23,9 @@ from matplotlib.figure import Figure
 import tkinter.filedialog
 import webbrowser
 
+
 TITLE_FONT = ("Helvetica", 18, "bold")
-
-
+PATH = './figures/'
 
 #******** Couleurs TKINTER ***************************************
 COLORS= ['snow', 'ghost white', 'white smoke', 'gainsboro', 'floral white', 'old lace',
@@ -121,14 +121,14 @@ class StartPage(Frame):
         texte.grid(row=10,column=0)
         
         #Fond d'écran
-        self.photox=PhotoImage(file='fondecprinc2.gif')
+        self.photox=PhotoImage(file=PATH+'fondecprinc2.gif')
         fondec=Label(self,image=self.photox)
         fondec.place(x=0,y=0,relwidth=1,relheight=1)
         
         #Photos
-        self.photo1 = PhotoImage(file='Chimie.gif')
-        self.photo2 = PhotoImage(file='Chimie2.gif')
-        self.photo3 = PhotoImage(file='Chimie3.gif')
+        self.photo1 = PhotoImage(file=PATH+'Chimie.gif')
+        self.photo2 = PhotoImage(file=PATH+'Chimie2.gif')
+        self.photo3 = PhotoImage(file=PATH+'Chimie3.gif')
         
         #Boutons Texte (TXT)
         BoutonSpectre=Button(self, text="   SPECTRE   ", bg='pale turquoise',font=("Helvetica", 14, "bold"), command=lambda: controller.show_frame("PageSpectre"))
@@ -157,7 +157,7 @@ class PageFonction(Frame):
         self.controller = controller
         
         #Fond d'écran
-        self.photox=PhotoImage(file='fondecfct3.gif')
+        self.photox=PhotoImage(file=PATH+'fondecfct3.gif')
         fondec=Label(self,image=self.photox)
         fondec.place(x=0,y=0,relwidth=1,relheight=1)
         
@@ -188,16 +188,16 @@ class PageFonction(Frame):
         button.grid(row=170,column=0, padx=0, pady=4)
         
         #Boutons photos
-        self.photo0=PhotoImage(file='tableau_fct.gif')
+        self.photo0=PhotoImage(file=PATH+'tableau_fct.gif')
         button = Button(self, image=self.photo0, command=lambda: controller.show_frame("PageTableauSpectre1"))
         button.grid(row=100,column=2, padx=20, pady=40, rowspan=200)
         
-        self.photo1=PhotoImage(file='RMN.gif')
+        self.photo1=PhotoImage(file=PATH+'RMN.gif')
         button = Button(self, image=self.photo1, command=lambda: controller.show_frame("PageTableauSpectre2"))
         button.grid(row=602,column=2,  padx=40, pady=10)
         
         #Photos
-        self.photo=PhotoImage(file='obs1_2.gif')
+        self.photo=PhotoImage(file=PATH+'obs1_2.gif')
         photo=Label(self, image=self.photo) 
         photo.grid(row=600,column=0, padx=70, rowspan=20)
         
@@ -211,7 +211,7 @@ class PageAide(Frame):
         self.controller = controller
         
         #Fond d'écran
-        self.photox=PhotoImage(file='fondecfct3.gif')
+        self.photox=PhotoImage(file=PATH+'fondecfct3.gif')
         fondec=Label(self,image=self.photox)
         fondec.place(x=0,y=0,relwidth=1,relheight=1)
         
@@ -249,8 +249,8 @@ class PageAide(Frame):
         button = Button(self, text="Retour", bg="lime green", command=lambda: controller.show_frame("StartPage"))
         button.grid(row=20,column=0, padx=20, pady=0)
         
-        self.photo1 = PhotoImage(file='tablper1.gif')
-        self.photo2 = PhotoImage(file='tablper2.gif')
+        self.photo1 = PhotoImage(file=PATH+'tablper1.gif')
+        self.photo2 = PhotoImage(file=PATH+'tablper2.gif')
         
         BoutonTableau1=Button(self,bg='medium sea green', image=self.photo1, command=lambda: controller.show_frame("PageTableau1"))
         BoutonTableau1.grid(row=130,column=1, pady=20, rowspan=30)
@@ -276,7 +276,7 @@ class PageTableau1(Frame):
         self.controller = controller
         
         #Fond d'écran
-        self.photox=PhotoImage(file='fondecfct3.gif')
+        self.photox=PhotoImage(file=PATH+'fondecfct3.gif')
         fondec=Label(self,image=self.photox)
         fondec.place(x=0,y=0,relwidth=1,relheight=1)
 
@@ -287,7 +287,7 @@ class PageTableau1(Frame):
         button = Button(self, text="Retour", bg="lime green", command=lambda: controller.show_frame("PageAide"))
         button.grid(row=20,column=0, padx=20, pady=20)
         
-        self.photo=PhotoImage(file='tablpergrd1.gif')
+        self.photo=PhotoImage(file=PATH+'tablpergrd1.gif')
         photo=Label(self, image=self.photo) 
         photo.grid(row=600,column=0, padx=250)
 
@@ -299,7 +299,7 @@ class PageTableau2(Frame):
         self.controller = controller
         
         #Fond d'écran
-        self.photox=PhotoImage(file='fondecfct3.gif')
+        self.photox=PhotoImage(file=PATH+'fondecfct3.gif')
         fondec=Label(self,image=self.photox)
         fondec.place(x=0,y=0,relwidth=1,relheight=1)
 
@@ -310,7 +310,7 @@ class PageTableau2(Frame):
         button = Button(self, text="Retour", bg="lime green", command=lambda: controller.show_frame("PageAide"))
         button.grid(row=20,column=0, padx=20, pady=20)
         
-        self.photo=PhotoImage(file='tablpergrd2.gif')
+        self.photo=PhotoImage(file=PATH+'tablpergrd2.gif')
         photo=Label(self, image=self.photo) 
         photo.grid(row=600,column=0, padx=250)
 
@@ -322,7 +322,7 @@ class PageTableauSpectre1(Frame):
         self.controller = controller
         
         #Fond d'écran
-        self.photox=PhotoImage(file='fondecfct3.gif')
+        self.photox=PhotoImage(file=PATH+'fondecfct3.gif')
         fondec=Label(self,image=self.photox)
         fondec.place(x=0,y=0,relwidth=1,relheight=1)
         
@@ -333,7 +333,7 @@ class PageTableauSpectre1(Frame):
         button = Button(self, text="Retour", bg="lime green", command=lambda: controller.show_frame("PageFonction"))
         button.grid(row=20,column=0, padx=20, pady=20)
         
-        self.photo=PhotoImage(file='tableau_fct_grd.gif')
+        self.photo=PhotoImage(file=PATH+'tableau_fct_grd.gif')
         photo=Label(self, image=self.photo) 
         photo.grid(row=600,column=0, padx=250)
 
@@ -346,7 +346,7 @@ class PageTableauSpectre2(Frame):
         self.controller = controller
         
         #Fond d'écran
-        self.photox=PhotoImage(file='fondecfct3.gif')
+        self.photox=PhotoImage(file=PATH+'fondecfct3.gif')
         fondec=Label(self,image=self.photox)
         fondec.place(x=0,y=0,relwidth=1,relheight=1)
 
@@ -357,7 +357,7 @@ class PageTableauSpectre2(Frame):
         button = Button(self, text="Retour", bg="lime green", command=lambda: controller.show_frame("PageFonction"))
         button.grid(row=20,column=0, padx=20, pady=20)
         
-        self.photo=PhotoImage(file='RMN_grd.gif')
+        self.photo=PhotoImage(file=PATH+'RMN_grd.gif')
         photo=Label(self, image=self.photo) 
         photo.grid(row=600,column=0, padx=420)
         
@@ -373,7 +373,7 @@ class PageSpectre(Frame):
         options['title']='QUEL SPECTRE VEUX-TU OUVRIR ?'
         
         #Fond d'écran
-        self.photox=PhotoImage(file='fondecfct3.gif')
+        self.photox=PhotoImage(file=PATH+'fondecfct3.gif')
         fondec=Label(self,image=self.photox)
         fondec.place(x=0,y=0,relwidth=1,relheight=1)
             
@@ -654,7 +654,7 @@ class PageInformation(Frame):
         self.controller = controller
         
         #Fond d'écran
-        self.photox=PhotoImage(file='fondecfct3.gif')
+        self.photox=PhotoImage(file=PATH+'fondecfct3.gif')
         fondec=Label(self,image=self.photox)
         fondec.place(x=0,y=0,relwidth=1,relheight=1)
         
@@ -684,7 +684,7 @@ class PageInformation(Frame):
         w = evt.widget
         index = int(w.curselection()[0])
         value = w.get(index)
-        self.pf1=PhotoImage(file=self.ff[index])
+        self.pf1=PhotoImage(file=PATH+self.ff[index])
         photof1=Label(self,image=self.pf1)
         photof1.grid(row=3,column=3,rowspan=100, padx=10, sticky='n')
         texte1=Label(self,text=self.listed[index],font=("Helvetica", 12, "bold"))
